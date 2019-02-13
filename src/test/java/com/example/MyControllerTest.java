@@ -30,7 +30,7 @@ public class MyControllerTest {
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("<html>\n" +
                         "<body>\n" +
-                        "main\n" +
+                        "Hello, Army!\n" +
                         "</body>\n" +
                         "</html>")));
 
