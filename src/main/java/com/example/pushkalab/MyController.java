@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@RestController
+@Controller
 public class MyController {
 
-    @GetMapping("/pushka")
+    @RequestMapping("/pushka")
     public String pushka(@RequestParam(name = "name", required = false, defaultValue = "Army") String name,
                          Map<String, Object> model) {
-   System.out.println("esdrth");
         model.put("name", name);
         return "pushkaH";
     }
