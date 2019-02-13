@@ -1,4 +1,9 @@
 language: java
 
+deploy:
+    provider: heroku
+    api_key: e3423399-be15-480d-a21b-6168ae0b367b
+    app: pushkalab
+
 notifications:
   email: false
