@@ -28,14 +28,10 @@ public class MyControllerTest {
     public void testGreeting() throws Exception{
 
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("<html>\n" +
-                        "<body>\n" +
-                        "Hello, Army!\n" +
-                        "</body>\n" +
-                        "</html>")));
+                .andExpect(content().string(containsString("Hello, Army!")));
 
         this.mockMvc.perform(get("/pushka?name=lol")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString(
-        "<html>\n<body>\n<div> Hello, lol </div>\n</body>\n</html>")));
+                        "Hello, lol")));
     }
 }

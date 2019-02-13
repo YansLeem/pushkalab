@@ -9,19 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@Controller
+@RestController
 public class MyController {
 
-    @RequestMapping("/pushka")
+    @RequestMapping(value = "/pushka")
     public String pushka(@RequestParam(name = "name", required = false, defaultValue = "Army") String name,
                          Map<String, Object> model) {
-        model.put("name", name);
-        return "pushkaH";
+        return "Hello, " + name;
     }
-    @GetMapping("/")
+
+    @RequestMapping(value = "/")
     public String main (Map<String, Object > model){
-        model.put("some", "Hello, Army!");
-        return "main";
+        return "Hello, Army!";
     }
 
 }
